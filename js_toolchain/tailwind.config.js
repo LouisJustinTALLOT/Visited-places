@@ -12,6 +12,7 @@ module.exports = {
       fontWeight: ['hover', 'focus'],
       display: ['hover', 'focus'],
       visibility: ['hover', 'focus'],
+      borderStyle: ['hover', 'focus'],
     },
   },
   plugins: [],
