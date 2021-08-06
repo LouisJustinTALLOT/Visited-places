@@ -10,8 +10,7 @@
 </head>
 <body>
     <!-- Le div contenant toute la page (fond coloré) -->
-    <div class="text-justify h-screen bg-gradient-to-r from-blue-600 via-indigo-400 to-purple-600
-    border-2 shadow-inner rounded-3xl">
+    <div class="text-justify h-screen bg-gradient-to-r from-blue-600 via-indigo-400 to-purple-600 shadow-inner">
         <!-- Contenu de la page -->
         <div class="flex">
             <div class="p-10 inline-block">
@@ -36,6 +35,16 @@
                 </p>
             </div>
         </div>
+        <!-- Le bouton de retour à la page d'accuil -->
+        <div class="m-10 fixed left-5 bottom-5 inline-flex rounded-md drop-shadow">
+            <a href="/" class="inline-flex items-center justify-center px-3 py-3 border-4 hover:border-purple-900
+            text-base font-bold rounded-md text-indigo-600 bg-indigo-50 hover:bg-indigo-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                </svg>
+                &nbsp; Back to homepage
+            </a>
+          </div>
     </div>
 </body>
 </html>
