@@ -9,6 +9,33 @@
     <link rel="stylesheet" href="{% static "css/tailwind-output.css" %}">
 </head>
 <body>
-    
+    <!-- Le div contenant toute la page (fond coloré) -->
+    <div class="text-justify h-screen bg-gradient-to-r from-blue-600 via-indigo-400 to-purple-600
+    border-2 shadow-inner rounded-3xl">
+        <!-- Contenu de la page -->
+        <div class="flex">
+            <div class="p-10 inline-block">
+                <h1 class="text-3xl py-5 font-extrabold">
+                    About Visited Places
+                </h1>
+                <div class="">
+                    <p class="">
+                        This website is a project by
+                        <a href="http://github.com/LouisJustinTALLOT" class="font-semibold hover:font-black hover:bg-purple-900 hover:text-blue-100">
+                            &nbsp;<span class="underline">Louis-Justin TALLOT</span> 
+                            <img class="rounded-full w-6 inline" src="https://github.com/LouisJustinTALLOT.png" alt="">
+                        </a>.
+                        It is built using <a href="https://www.djangoproject.com/" class="underline hover:font-black hover:bg-purple-900 hover:text-blue-100">Django</a>
+                        and <a href="https://tailwindcss.com/" class="underline hover:font-black hover:bg-purple-900 hover:text-blue-100">Tailwind CSS</a>.
+                    </p>
+                </div>
+                <p>
+                    <br>
+                    The aim of this project is to allow the user to remember places they have visited
+                    more easily by visualizing them on a map.
+                </p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
