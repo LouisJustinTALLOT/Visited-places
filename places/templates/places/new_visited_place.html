@@ -5,18 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add a new visited place</title>
-    <!-- {% load static %}  -->
+    {% load static %} 
     <link rel="stylesheet" href="{% static "css/tailwind-output.css" %}">
-    <link rel="stylesheet" href="../../../static/css/tailwind-output.css">
 
     <!-- add static jQuery -->
     <script src="{% static "js/jquery-3.6.0.min.js" %}"></script>
-    <script src="../../../static/js/jquery-3.6.0.min.js"></script>
     
 </head>
 <body>     
     <!-- the global container -->
     <div class="m-10">
+        {% if place_registered %}
+            <!-- Popup after registering a new Place -->
+            <!-- inspired from https://tailwindui.com/components/marketing/elements/banners -->
+            <div id="banner_place_registered" class="bg-green-600 max-w-7xl mx-auto my-2 py-2 px-3 sm:px-6 lg:px-8 rounded-full flex items-center justify-between flex-wrap">
+                <!-- text of the popup -->
+                <div class="w-0 flex-1 flex items-center">
+                    <p class="ml-96 font-medium text-2xl text-white truncate">
+                        The place has been registered !
+                    </p>
+                </div>
+                <!-- button to see the map -->
+                <div class="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
+                    <a href="/places/all_visited_places" class="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-indigo-600 bg-white hover:bg-indigo-50">
+                        See your map
+                    </a>
+                </div>
+                <!-- close button -->
+                <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
+                    <button type="button" class="-mr-1 flex p-2 rounded-md hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2" onclick="disappear_banner_place_registered()">
+                        <span class="sr-only">Dismiss</span>
+                        <!-- Heroicon name: outline/x -->
+                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                  </div>
+            </div>
+        {% endif %}
+
         <!-- the header -->
         <span class="m-2 text-center font-bold text-5xl">
             Add a new visited place
@@ -29,4 +56,9 @@
         </form>
     </div>
 </body>
+<script>
+    function disappear_banner_place_registered(){
+        $("#banner_place_registered").fadeOut();
+    }
+</script>
 </html>

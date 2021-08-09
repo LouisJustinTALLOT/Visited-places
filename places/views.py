@@ -47,6 +47,8 @@ def new_visited_place(request):
 
     # if a GET (or any other method) we'll create a blank form
     else:
+        if 'place_registered' in request.GET:
+            place_registered = True
 
         form = PlaceForm()
 
