@@ -5,8 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Endroits visités</title>
+    {% load static %} 
+    <link rel="stylesheet" href="{% static "css/tailwind-output.css" %}">
 </head>
-<body>
-    {{final_map|safe}}
+    <div class="p-5">
+        <div>
+            You have currently {{total_number_of_places}} places registered.
+        </div>
+        <div class="flex justify-center rounded-3xl border-separate border-8 border-purple-800">
+            <div>{{final_map|safe}}</div>
+        </div>
+    </div>
 </body>
 </html>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous">
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        for (span of $("span")) {
+
+            if (span.textContent.includes("Make this Notebook")) {
+                console.log("here")
+                span.textContent = "aaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaa "
+            }
+            console.log(span)
+
+        }
+    });
+</script>
