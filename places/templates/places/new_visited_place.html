@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a new visited place</title>
+    <!-- {% load static %}  -->
+    <link rel="stylesheet" href="{% static "css/tailwind-output.css" %}">
+    <link rel="stylesheet" href="../../../static/css/tailwind-output.css">
+
+    <!-- add static jQuery -->
+    <script src="{% static "js/jquery-3.6.0.min.js" %}"></script>
+    <script src="../../../static/js/jquery-3.6.0.min.js"></script>
+    
+</head>
+<body>     
+    <!-- the global container -->
+    <div class="m-10">
+        <!-- the header -->
+        <span class="m-2 text-center font-bold text-5xl">
+            Add a new visited place
+        </span>
+
+        <form action="/places/new_visited_place/" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
