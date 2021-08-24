@@ -11,10 +11,11 @@
     <!-- add static jQuery -->
     <script src="{% static "js/jquery-3.6.0.min.js" %}"></script>
     
+    {{ form.media }}
 </head>
 <body>     
     <!-- the global container -->
-    <div class="m-10">
+    <div class="mx-10">
         {% if place_registered %}
             <!-- Popup after registering a new Place -->
             <!-- inspired from https://tailwindui.com/components/marketing/elements/banners -->
@@ -45,13 +46,13 @@
         {% endif %}
 
         <!-- the header -->
-        <span class="m-2 text-center font-bold text-5xl">
+        <span class="block mx-2 my-5 text-center font-bold text-5xl">
             Add a new visited place
         </span>
 
         <form action="/places/new_visited_place/" method="post">
             {% csrf_token %}
-            {{ form }}
+            {{ form.as_p }}
             <input type="submit" value="Submit">
         </form>
     </div>
