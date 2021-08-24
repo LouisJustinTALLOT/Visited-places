@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import os
+import django
 
 from pathlib import Path
 
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
+    'floppyforms', 
     'places',
     'website',
 ]
@@ -57,7 +60,12 @@ ROOT_URLCONF = 'visited_places.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            # include django's form templates
+            os.path.join(
+                os.path.dirname(django.__file__), "forms/templates/"
+            ),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
