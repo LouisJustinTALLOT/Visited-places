@@ -41,7 +41,9 @@ def new_visited_place(request):
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
-            # ...
+            # and add a new Place object to the database
+            form.save()
+
             # redirect to a new URL:
             return HttpResponseRedirect('/places/new_visited_place/?place_registered=1')
 
