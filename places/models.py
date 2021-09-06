@@ -9,3 +9,7 @@ class Place(models.Model):
     date_visited = models.DateField(verbose_name="Date de dernière visite")
 
     coordinates = gis_models.PointField(verbose_name="Coordonnées", null=True, blank=True)
+
+    class Meta:
+        verbose_name = "Lieu visité"
+        verbose_name_plural = "Lieux visités"
