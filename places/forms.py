@@ -4,7 +4,7 @@ import floppyforms.__future__ as floppyforms
 from django.contrib.gis.db import models as gis_models
 from django.contrib.gis.forms import ModelForm
 
-from .models import Place
+from .models import Stay
 
 
 class PointWidget(floppyforms.gis.PointWidget, floppyforms.gis.BaseOsmWidget):
@@ -12,7 +12,7 @@ class PointWidget(floppyforms.gis.PointWidget, floppyforms.gis.BaseOsmWidget):
 
 class PlaceForm(floppyforms.ModelForm):
     class Meta:
-        model = Place
+        model = Stay
         fields = ("name","date_visited", "coordinates",)
         widgets = {
             "name": floppyforms.TextInput(attrs={"placeholder": "Nom du lieu"}),

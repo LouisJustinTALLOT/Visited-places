@@ -1,4 +1,4 @@
-from .models import Place
+from .models import Stay
 
 def get_total_number_of_places():
-    return Place.objects.count()
+    return Stay.objects.count()

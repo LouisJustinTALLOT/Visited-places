@@ -7,7 +7,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 import folium
 
 # My models
-from .models import Place
+from .models import Stay
 # the associated methods
 from .methods import get_total_number_of_places
 # and the associated forms
@@ -21,7 +21,7 @@ def all_visited_places(request):
     m = folium.Map(location=[48.844952, 2.339193], zoom_start=4)
 
     # get all Places objects
-    places = Place.objects.all()
+    places = Stay.objects.all()
     for place in places:
         # add a marker to the map
         long, lat = place.coordinates.coords

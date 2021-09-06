@@ -1,7 +1,7 @@
 from django.contrib.gis import admin
 
-from .models import Place
+from .models import Stay
 
 # Register your models here.
 
-admin.site.register(Place, admin.GeoModelAdmin)
+admin.site.register(Stay, admin.GeoModelAdmin)
